@@ -42,11 +42,11 @@ type PushEventPayload struct {
 }
 
 type Event struct {
-	Id        string    `json:"id"`
-	Type      string    `json:"type"`
-	Actor     Actor     `json:"actor"`
-	Repo      Repo      `json:"repo"`
-	Payload   any       `json:"payload"`
-	Public    bool      `json:"public"`
-	CreatedAt time.Time `json:"created_at"`
+	Id        string         `json:"id"`
+	Type      string         `json:"type"`
+	Actor     Actor          `json:"actor"`
+	Repo      Repo           `json:"repo"`
+	Payload   map[string]any `json:"payload"`
+	Public    bool           `json:"public"`
+	CreatedAt time.Time      `json:"created_at"`
 }
