@@ -7,6 +7,10 @@ type Event struct {
 	Payload map[string]any `json:"payload"`
 }
 
+func ParsePayload[T any](event Event) T {
+	return MapToStruct[T](event.Payload)
+}
+
 type PushEventPayload struct {
 	Commits []any `json:"commits"`
 }

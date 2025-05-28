@@ -5,7 +5,7 @@ import (
 )
 
 func PushEventReporter(event Event) string {
-	payload := MapToStruct[PushEventPayload](event.Payload)
+	payload := ParsePayload[PushEventPayload](event)
 
 	commits := len(payload.Commits)
 
@@ -13,13 +13,13 @@ func PushEventReporter(event Event) string {
 }
 
 func CreateEventReporter(event Event) string {
-	payload := MapToStruct[CreateEventPayload](event.Payload)
+	payload := ParsePayload[CreateEventPayload](event)
 
 	return fmt.Sprintf("A new '%s' was created in %s", payload.RefType, event.Repo.Name)
 }
 
 func IssueCommentEventReporter(event Event) string {
-	payload := MapToStruct[IssueCommentEventPayload](event.Payload)
+	payload := ParsePayload[IssueCommentEventPayload](event)
 
 	return fmt.Sprintf(
 		"%s comments the following in issue '%s' -> %s",
@@ -30,7 +30,7 @@ func IssueCommentEventReporter(event Event) string {
 }
 
 func PullRequestEventReporter(event Event) string {
-	payload := MapToStruct[PullRequestEventPayload](event.Payload)
+	payload := ParsePayload[PullRequestEventPayload](event)
 
 	return fmt.Sprintf(
 		"%s %s a pull request with title '%s'",
