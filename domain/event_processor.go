@@ -1,21 +1,25 @@
 package domain
 
 import (
-	"fmt"
 	"log"
 )
 
-func ProcessEvents(user string, eventRepository EventRepository) {
+func ProcessEvents(user string, eventRepository EventRepository, printer Printer) {
 	events := eventRepository(user)
 
+	if len(events) == 0 {
+		log.Printf("No events found for user '%s'\n", user)
+	}
+
 	for _, event := range events {
-		resume, ok := Resumers[event.Type]
+		reporter, ok := Reporters[event.Type]
 
 		if !ok {
 			log.Printf("Event: %s not handled\n", event.Type)
 			continue
 		}
 
-		fmt.Println("-", resume(event))
+		eventReported := "- " + reporter(event)
+		printer(eventReported)
 	}
 }

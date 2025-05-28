@@ -9,5 +9,9 @@ import (
 
 func main() {
 	user := os.Args[1]
-	domain.ProcessEvents(user, infrastructure.HttpEventRepository)
+	domain.ProcessEvents(
+		user,
+		infrastructure.HttpEventRepository,
+		infrastructure.Print,
+	)
 }

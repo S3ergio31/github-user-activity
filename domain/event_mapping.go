@@ -5,9 +5,9 @@ const createEvent = "CreateEvent"
 const issueCommentEvent = "IssueCommentEvent"
 const pullRequestEvent = "PullRequestEvent"
 
-var Resumers = map[string]EventResume{
-	pushEvent:         PushEventResumer,
-	createEvent:       CreateEventResumer,
-	issueCommentEvent: IssueCommentEventResumer,
-	pullRequestEvent:  PullRequestEventResumer,
+var Reporters = map[string]EventReport{
+	pushEvent:         PushEventReporter,
+	createEvent:       CreateEventReporter,
+	issueCommentEvent: IssueCommentEventReporter,
+	pullRequestEvent:  PullRequestEventReporter,
 }

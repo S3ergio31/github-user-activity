@@ -2,4 +2,6 @@ package domain
 
 type EventRepository func(user string) []Event
 
-type EventResume func(Event) string
+type EventReport func(event Event) string
+
+type Printer func(eventReported string)
