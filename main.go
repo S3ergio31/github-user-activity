@@ -8,10 +8,17 @@ import (
 )
 
 func main() {
-	user := os.Args[1]
 	domain.ProcessEvents(
-		user,
+		getUser(),
 		infrastructure.HttpEventRepository,
 		infrastructure.Print,
 	)
+}
+
+func getUser() string {
+	if len(os.Args) == 1 {
+		return ""
+	}
+
+	return os.Args[1]
 }
