@@ -1,0 +1,14 @@
+[
+    {
+        "type": "PullRequestEvent",
+        "actor": {
+            "login": "TestUser"
+        },
+        "payload": {
+            "action": "closed",
+            "pull_request": {
+                "title": "Pull request title"
+            }
+        }
+    }
+]

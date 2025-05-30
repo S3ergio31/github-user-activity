@@ -1,0 +1,17 @@
+[
+    {
+        "type": "IssueCommentEvent",
+        "payload": {
+            "action": "created",
+            "issue": {
+                "title": "Issue Title"
+            },
+            "comment": {
+                "user": {
+                    "login": "TestUser"
+                },
+                "body": "Commnet Body"
+            }
+        }
+    }
+]

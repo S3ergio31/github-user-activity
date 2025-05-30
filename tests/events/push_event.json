@@ -1,0 +1,25 @@
+[
+    {
+        "type": "PushEvent",
+        "actor": {
+            "login": "TestUser"
+        },
+        "repo": {
+            "name": "repo/test"
+        },
+        "payload": {
+            "commits": [
+                {
+                    "sha": "7f68669ad7d8a706883b8409f6b7254fdc437f67",
+                    "author": {
+                        "email": "test_user_author@test.com",
+                        "name": "TestUserAuthor"
+                    },
+                    "message": "A test commit",
+                    "distinct": true,
+                    "url": "https://test"
+                }
+            ]
+        }
+    }
+]

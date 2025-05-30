@@ -1,0 +1,11 @@
+[
+    {
+        "type": "CreateEvent",
+        "repo": {
+            "name": "repo/test"
+        },
+        "payload": {
+            "ref_type": "branch"
+        }
+    }
+]
